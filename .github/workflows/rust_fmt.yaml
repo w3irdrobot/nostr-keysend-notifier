@@ -1,0 +1,30 @@
+name: Rust
+
+on:
+  workflow_call: {}
+
+env:
+  CARGO_TERM_COLOR: always
+  SQLX_OFFLINE: true
+
+jobs:
+  fmt:
+    name: Rustfmt
+    strategy:
+      matrix:
+        os: [ubuntu-latest]
+        rust: [stable]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v2
+
+      - uses: actions-rs/toolchain@v1
+        with:
+          toolchain: stable
+          override: true
+          components: rustfmt
+
+      - uses: actions-rs/cargo@v1
+        with:
+          command: fmt
+          args: --all -- --check

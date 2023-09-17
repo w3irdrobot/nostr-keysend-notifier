@@ -1,0 +1,18 @@
+name: Pull Request
+
+on:
+  workflow_call: {}
+  pull_request: {}
+
+jobs:
+  clippy:
+    uses: ./.github/workflows/rust_clippy.yaml
+    secrets: inherit
+
+  deps:
+    uses: ./.github/workflows/rust_deps.yaml
+    secrets: inherit
+
+  fmt:
+    uses: ./.github/workflows/rust_fmt.yaml
+    secrets: inherit
