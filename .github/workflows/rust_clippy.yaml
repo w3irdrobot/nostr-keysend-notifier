@@ -9,9 +9,6 @@ env:
 jobs:
   clippy:
     name: Clippy
-    permissions:
-      contents: read
-      checks: write
     strategy:
       matrix:
         os: [ubuntu-latest]
