@@ -1,0 +1,4 @@
+/target
+.privkey
+config.toml
+.cargo

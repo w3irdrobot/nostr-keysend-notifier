@@ -1,0 +1,13 @@
+[lnd]
+cert_path = ""
+host = ""
+mac_path = ""
+
+[nostr]
+receiver_pubkey = ""
+relays = [
+  "wss://no.str.cr",
+  "wss://nostr.bitcoiner.social",
+  "wss://relay.snort.social",
+  "wss://relay.damus.io",
+]
